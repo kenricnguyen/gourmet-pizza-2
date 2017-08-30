@@ -202,6 +202,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Customers\MakeOrder.aspx" />
+    <Content Include="Customers\MyOrders.aspx" />
+    <Content Include="Customers\PersonalDetails.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -213,6 +216,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Customers\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="PizzaOrdering.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -378,6 +382,27 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\MakeOrder.aspx.cs">
+      <DependentUpon>MakeOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\MakeOrder.aspx.designer.cs">
+      <DependentUpon>MakeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\MyOrders.aspx.cs">
+      <DependentUpon>MyOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\MyOrders.aspx.designer.cs">
+      <DependentUpon>MyOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\PersonalDetails.aspx.cs">
+      <DependentUpon>PersonalDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\PersonalDetails.aspx.designer.cs">
+      <DependentUpon>PersonalDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

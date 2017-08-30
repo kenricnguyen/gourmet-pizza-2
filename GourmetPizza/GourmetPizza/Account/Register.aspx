@@ -149,5 +149,7 @@
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
+        <br />
+        <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>

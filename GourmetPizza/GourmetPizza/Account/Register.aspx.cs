@@ -52,12 +52,13 @@ namespace GourmetPizza.Account
                         if (rowCount > 0)
                         {
                             msg = "Registration is successful";
-                            ClientScript.RegisterStartupScript(this.GetType(), "Thank you for registering", "alert('" + msg + "');", true);
+                            lblResult.Text = msg;
                         }
                         else
                         {
                             msg = "Registration has some issues. Some data cannot be saved";
-                            ClientScript.RegisterStartupScript(this.GetType(), "Error", "alert('" + msg + "');", true);
+                            lblResult.Text = msg;
+
                         }
                     }
                 }

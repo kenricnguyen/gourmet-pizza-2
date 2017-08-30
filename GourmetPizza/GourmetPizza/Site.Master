@@ -63,7 +63,20 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>
+                                </li>
+                                <li>
+                                    <a runat="server" style="font-style:italic" href="~/Customers/PersonalDetails" title="Personal Details">Personal Details</a>
+                                </li>
+
+                                <li>
+                                    <a runat="server" style="font-style:italic" href="~/Customers/MakeOrder" title="Make an order">Make Order</a>
+                                </li>
+
+                                <li><a runat="server" style="font-style:italic" href="~/Customers/MyOrders" title="View all orders">My Orders</a>
+                                </li>
+
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
