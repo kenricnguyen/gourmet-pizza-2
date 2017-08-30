@@ -74,14 +74,14 @@
             <div class="col-xs-10">
                 <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control" Width="280" >
                     <asp:ListItem>Please Select</asp:ListItem>
-                    <asp:ListItem>New South Wales</asp:ListItem>
-                    <asp:ListItem>Queensland</asp:ListItem>
-                    <asp:ListItem>South Australia</asp:ListItem>
-                    <asp:ListItem>Tasmania</asp:ListItem>
-                    <asp:ListItem>Victoria</asp:ListItem>
-                    <asp:ListItem>Western Australia</asp:ListItem>
-                    <asp:ListItem>Northern Territory</asp:ListItem>
-                    <asp:ListItem>Australian Capital Territory</asp:ListItem>
+                    <asp:ListItem>NSW</asp:ListItem>
+                    <asp:ListItem>QLD</asp:ListItem>
+                    <asp:ListItem>SA</asp:ListItem>
+                    <asp:ListItem>TAS</asp:ListItem>
+                    <asp:ListItem>VIC</asp:ListItem>
+                    <asp:ListItem>WA</asp:ListItem>
+                    <asp:ListItem>NT</asp:ListItem>
+                    <asp:ListItem>ACT</asp:ListItem>
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ddlState"
                     CssClass="text-danger" ErrorMessage="State required" InitialValue="Please Select"></asp:RequiredFieldValidator>
