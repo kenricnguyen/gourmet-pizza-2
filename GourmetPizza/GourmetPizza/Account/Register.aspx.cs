@@ -51,7 +51,7 @@ namespace GourmetPizza.Account
                         string msg = "";
                         if (rowCount > 0)
                         {
-                            msg = "Registration is successful";
+                            msg = "Registration is successful. You can log in now.";
                             lblResult.Text = msg;
                         }
                         else
@@ -63,9 +63,15 @@ namespace GourmetPizza.Account
                     }
                 }
 
-                //Finishing NonQuery Insertion 
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                //Finishing NonQuery Insertion
+                
+
+                //Uncomment to allow auto-redirect after successful registration
+                //signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+                //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+
+                //get user to log in 
+
             }
             else 
             {

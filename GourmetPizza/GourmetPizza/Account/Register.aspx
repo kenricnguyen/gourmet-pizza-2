@@ -9,6 +9,11 @@
     <div class="form-horizontal">
         <h4>Create a new account</h4>
         <hr />
+        
+        <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
+        <a runat="server" href="~/Account/Login">Log in</a>
+        <br />
+        <br />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
 
         <div class="form-group">
@@ -108,12 +113,7 @@
                 </asp:RequiredFieldValidator>
             </div>
         </div>
-        <%--<asp:Label ID="Label10" runat="server" Text="Email Address:" Width="150px"></asp:Label>
-        <asp:TextBox ID="txtEmailAddress" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtEmailAddress" ErrorMessage="Email Address required" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="txtEmailAddress" ErrorMessage="Must be in email format" ForeColor="#CC0000" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-        --%>
-
+    
         <%--This is the template area--%>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Email" CssClass="  col-xs-2">Email</asp:Label>
@@ -149,7 +149,5 @@
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
-        <br />
-        <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>

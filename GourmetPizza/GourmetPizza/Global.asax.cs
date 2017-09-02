@@ -11,6 +11,11 @@ namespace GourmetPizza
 {
     public class Global : HttpApplication
     {
+        protected void Session_Start(Object sender, EventArgs e)
+        {
+            HttpContext.Current.Session["UserId"] = "";
+        }
+
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
