@@ -11,7 +11,7 @@ namespace GourmetPizza.customers
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["username"] = Context.User.Identity.Name;
         }
     }
 }
