@@ -62,6 +62,7 @@
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
+                            <asp:Label ID="lblFullName" runat="server" Text="" Enabled="false"></asp:Label>
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>

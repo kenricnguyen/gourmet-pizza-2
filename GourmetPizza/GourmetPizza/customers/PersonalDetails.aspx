@@ -260,35 +260,7 @@
 
                     </div>
                 </div>
-                <%--Username:
-            <asp:Label ID="usernameLabel" runat="server" Text='<%# Eval("username") %>' />
-            <br />
-            Given Name:
-            <asp:Label ID="gnameLabel" runat="server" Text='<%# Bind("gname") %>' />
-            <br />
-            Surname:
-            <asp:Label ID="snameLabel" runat="server" Text='<%# Bind("sname") %>' />
-            <br />
-            Title:
-            <asp:Label ID="titleLabel" runat="server" Text='<%# Bind("title") %>' />
-            <br />
-            DOB:
-            <asp:Label ID="dobLabel" runat="server" Text='<%# Bind("dob") %>' />
-            <br />
-            Address:
-            <asp:Label ID="addressLabel" runat="server" Text='<%# Bind("address") %>' />
-            <br />
-            Suburb:
-            <asp:Label ID="suburbLabel" runat="server" Text='<%# Bind("suburb") %>' />
-            <br />
-            State:
-            <asp:Label ID="stateLabel" runat="server" Text='<%# Bind("state") %>' />
-            <br />
-            Postcode:
-            <asp:Label ID="postcodeLabel" runat="server" Text='<%# Bind("postcode") %>' />
-            <br />
-            Mobile:
-            <asp:Label ID="mobileLabel" runat="server" Text='<%# Bind("mobile") %>' />--%>
+                
                 <br />
             </div>
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" OnClick="EditButton_Click" Text="Edit" />

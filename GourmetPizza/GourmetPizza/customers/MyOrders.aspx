@@ -45,7 +45,7 @@
             <asp:BoundField DataField="orderID" HeaderText="Order ID" ReadOnly="True" SortExpression="orderID" InsertVisible="False" />
             <asp:BoundField DataField="pizzaID" HeaderText="Pizza ID" SortExpression="pizzaID" />
             <asp:BoundField DataField="pizzatype" HeaderText="Pizza Type" SortExpression="pizzaID" />
-            <asp:BoundField DataField="pizzasize" HeaderText="Pizza Size" SortExpression="pizzasize" />
+            <asp:BoundField DataField="pizzasize" HeaderText="Pizza Size (inch)" SortExpression="pizzasize" />
             <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" />
             <asp:BoundField DataField="totalCost" HeaderText="Total Cost" SortExpression="totalCost" />
             <asp:BoundField DataField="ordertime" HeaderText="Order Time" SortExpression="ordertime" />
