@@ -9,6 +9,7 @@ using GourmetPizza.Models;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using System.Globalization;
+using System.Drawing;
 
 namespace GourmetPizza.Account
 {
@@ -51,16 +52,19 @@ namespace GourmetPizza.Account
                         string msg = "";
                         if (rowCount > 0)
                         {
+                            Panel1.Enabled = false;
                             msg = "Registration is successful. You can log in now.";
                             lblResult.Text = msg;
+                            lblResult.ForeColor = Color.Green;
                         }
                         else
                         {
                             msg = "Registration has some issues. Some data cannot be saved";
                             lblResult.Text = msg;
-
+                            lblResult.ForeColor = Color.Red;
                         }
                     }
+                    
                 }
 
                 //Finishing NonQuery Insertion
@@ -79,6 +83,5 @@ namespace GourmetPizza.Account
             }
         }
 
-       
     }
 }

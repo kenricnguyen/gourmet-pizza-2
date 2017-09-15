@@ -5,13 +5,12 @@
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
-
-    <div class="form-horizontal">
+    <asp:Panel ID="Panel1" runat="server" CssClass="form-horizontal">
         <h4>Create a new account</h4>
         <hr />
-        
-        <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
-        <a runat="server" href="~/Account/Login">Log in</a>
+
+        <asp:Label ID="lblResult" runat="server" ForeColor="Green"></asp:Label>
+        <%--<a runat="server" href="~/Account/Login">Log in</a>--%>
         <br />
         <br />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
@@ -35,16 +34,16 @@
             <div class="col-xs-10">
                 <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirstName" CssClass="text-danger" ErrorMessage="First Name required"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator runat="server" ControlToValidate="txtFirstName" CssClass="txt-danger" ErrorMessage="English letters, apostrophe and hyphen only" ValidationExpression="[a-zA-Z-']+"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator runat="server" ControlToValidate="txtFirstName" CssClass="text-danger" ErrorMessage="English letters, apostrophe and hyphen only" ValidationExpression="[a-zA-Z-']+"></asp:RegularExpressionValidator>
             </div>
         </div>
 
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="txtLastName" CssClass="  col-xs-2" >Last Name</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="txtLastName" CssClass="  col-xs-2">Last Name</asp:Label>
             <div class="col-xs-10">
                 <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtLastName" CssClass="text-danger" ErrorMessage="Last Name required" ></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator runat="server" ControlToValidate="txtLastName" CssClass="text-danger" ErrorMessage="English letters, apostrophe and hyphen only"  ValidationExpression="[a-zA-Z-']+"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtLastName" CssClass="text-danger" ErrorMessage="Last Name required"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator runat="server" ControlToValidate="txtLastName" CssClass="text-danger" ErrorMessage="English letters, apostrophe and hyphen only" ValidationExpression="[a-zA-Z-']+"></asp:RegularExpressionValidator>
             </div>
         </div>
 
@@ -77,7 +76,7 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ddlState" CssClass="  col-xs-2">State</asp:Label>
             <div class="col-xs-10">
-                <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control" Width="280" >
+                <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control" Width="280">
                     <asp:ListItem>Please Select</asp:ListItem>
                     <asp:ListItem>NSW</asp:ListItem>
                     <asp:ListItem>QLD</asp:ListItem>
@@ -111,9 +110,10 @@
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtMobilePhone"
                     CssClass="text-danger" ErrorMessage="Mobile Phone required">
                 </asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtMobilePhone" ErrorMessage="Must be in the format of 04dddddddd, where 'd' is a digit" CssClass="text-danger" ValidationExpression="(04)\d{8}"></asp:RegularExpressionValidator>
             </div>
         </div>
-    
+
         <%--This is the template area--%>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Email" CssClass="  col-xs-2">Email</asp:Label>
@@ -149,5 +149,5 @@
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
-    </div>
+    </asp:Panel>
 </asp:Content>

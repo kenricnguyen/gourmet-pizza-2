@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PersonalDetails.aspx.cs" Inherits="GourmetPizza.customers.PersonalDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
     <asp:FormView ID="FormView1" runat="server" CssClass="table" DataKeyNames="username" DataSourceID="SqlDataSource1">
         <EditItemTemplate>
 
@@ -11,17 +12,20 @@
 
                 <%--Title label and dropdownlist--%>
                 <div class="form-group">
-                    <asp:Label runat="server" AssociatedControlID="txtTitle" CssClass="  col-xs-2">Title</asp:Label>
+                    <asp:Label runat="server" AssociatedControlID="ddlTitle" CssClass="  col-xs-2">Title</asp:Label>
                     <div class="col-xs-10">
-                        <%--<asp:DropDownList ID="ddlTitle" runat="server" CssClass="form-control" Width="280">
+
+                       <%-- <asp:TextBox ID="txtTitleEdit" runat="server" CssClass="form-control" Visible="false" Text='<%# Bind("title") %>'></asp:TextBox>--%>
+
+                        <asp:DropDownList ID="ddlTitle" runat="server" CssClass="form-control" Width="280">
                             <asp:ListItem Value="Please Select">Please Select</asp:ListItem>
                             <asp:ListItem>Mr</asp:ListItem>
                             <asp:ListItem>Mrs</asp:ListItem>
                             <asp:ListItem>Ms</asp:ListItem>
                             <asp:ListItem>Dr</asp:ListItem>
-                        </asp:DropDownList>--%>
-                        <asp:TextBox ID="txtTitle" runat="server" CssClass="form-control" Text='<%# Bind("title") %>'></asp:TextBox>
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="txtTitle" CssClass="text-danger" ErrorMessage="Title required" InitialValue="Please Select"></asp:RequiredFieldValidator>
+                        </asp:DropDownList>
+                        
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="ddlTitle" CssClass="text-danger" ErrorMessage="Title required" InitialValue="Please Select"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -31,7 +35,7 @@
                     <div class="col-xs-10">
                         <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" Text='<%# Bind("gname") %>'></asp:TextBox>
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirstName" CssClass="text-danger" ErrorMessage="First Name required"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator runat="server" ControlToValidate="txtFirstName" CssClass="txt-danger" ErrorMessage="English letters, apostrophe and hyphen only" ValidationExpression="[a-zA-Z-']+"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator runat="server" ControlToValidate="txtFirstName" CssClass="text-danger" ErrorMessage="English letters, apostrophe and hyphen only" ValidationExpression="[a-zA-Z-']+"></asp:RegularExpressionValidator>
                     </div>
                 </div>
 
@@ -79,9 +83,9 @@
 
                 <%--State label and dropdownlist--%>
                 <div class="form-group">
-                    <asp:Label runat="server" AssociatedControlID="txtState" CssClass="  col-xs-2">State</asp:Label>
+                    <asp:Label runat="server" AssociatedControlID="ddlState" CssClass="  col-xs-2">State</asp:Label>
                     <div class="col-xs-10">
-                        <%--<asp:DropDownList ID="ddlState" runat="server" CssClass="form-control" Width="280" >
+                        <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control" Width="280" >
                             <asp:ListItem>Please Select</asp:ListItem>
                             <asp:ListItem>NSW</asp:ListItem>
                             <asp:ListItem>QLD</asp:ListItem>
@@ -91,9 +95,9 @@
                             <asp:ListItem>WA</asp:ListItem>
                             <asp:ListItem>NT</asp:ListItem>
                             <asp:ListItem>ACT</asp:ListItem>
-                        </asp:DropDownList>--%>
-                        <asp:TextBox ID="txtState" CssClass="form-control" runat="server" Text='<%# Bind("state") %>'></asp:TextBox>
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="txtState"
+                        </asp:DropDownList>
+                        <%--<asp:TextBox ID="txtState" CssClass="form-control" runat="server" Text='<%# Bind("state") %>'></asp:TextBox>--%>
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="ddlState"
                             CssClass="text-danger" ErrorMessage="State required" InitialValue="Please Select"></asp:RequiredFieldValidator>
                     </div>
                 </div>
@@ -117,8 +121,8 @@
                     <div class="col-xs-10">
                         <asp:TextBox ID="txtMobilePhone" CssClass="form-control" runat="server" Text='<%# Bind("mobile") %>'></asp:TextBox>
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="txtMobilePhone"
-                            CssClass="text-danger" ErrorMessage="Mobile Phone required">
-                        </asp:RequiredFieldValidator>
+                            CssClass="text-danger" ErrorMessage="Mobile Phone required"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtMobilePhone" ErrorMessage="Must be in the format of 04dddddddd, where 'd' is a digit" CssClass="text-danger" ValidationExpression="(04)\d{8}"></asp:RegularExpressionValidator>
                     </div>
                 </div>
 
@@ -169,7 +173,7 @@
                 <asp:ValidationSummary runat="server" CssClass="text-danger" />
 
                 <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" OnClick="UpdateButton_Click" />
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <EditRowStyle />
@@ -267,6 +271,7 @@
         </ItemTemplate>
         <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
     </asp:FormView>
+    <asp:Label ID="lblResult" runat="server" Visible="false" ForeColor="Green"></asp:Label>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PizzaOrdersConnection %>" SelectCommand="SELECT * FROM [customers] WHERE ([username] = @username)" UpdateCommand="UPDATE [customers] SET [gname] = @gname, [sname] = @sname, [title] = @title, [dob] = @dob, [address] = @address, [suburb] = @suburb, [state] = @state, [postcode] = @postcode, [mobile] = @mobile WHERE [username] = @username">
         <SelectParameters>
             <asp:SessionParameter Name="username" SessionField="username" Type="String" />
@@ -274,11 +279,13 @@
         <UpdateParameters>
             <asp:Parameter Name="gname" Type="String" />
             <asp:Parameter Name="sname" Type="String" />
-            <asp:Parameter Name="title" Type="String" />
+            <asp:ControlParameter ControlID="FormView1$ddlTitle" Name="title" Type="String"  />
+            <%--<asp:Parameter Name="title" Type="String" />--%>
             <asp:Parameter Name="dob" Type="DateTime" />
             <asp:Parameter Name="address" Type="String" />
             <asp:Parameter Name="suburb" Type="String" />
-            <asp:Parameter Name="state" Type="String" />
+            <asp:ControlParameter ControlID="FormView1$ddlState" Name="state" Type="String"  />
+            <%--<asp:Parameter Name="state" Type="String" />--%>
             <asp:Parameter Name="postcode" Type="String" />
             <asp:Parameter Name="mobile" Type="String" />
             <asp:Parameter Name="username" Type="String" />

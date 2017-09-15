@@ -31,15 +31,6 @@ namespace GourmetPizza.customers {
         protected global::System.Web.UI.WebControls.View OrderDetails;
         
         /// <summary>
-        /// Label21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
-        
-        /// <summary>
         /// Label11 control.
         /// </summary>
         /// <remarks>
@@ -148,15 +139,6 @@ namespace GourmetPizza.customers {
         protected global::System.Web.UI.WebControls.View PaymentDetails;
         
         /// <summary>
-        /// Label22 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
-        
-        /// <summary>
         /// TotalCostFormView control.
         /// </summary>
         /// <remarks>
@@ -164,6 +146,15 @@ namespace GourmetPizza.customers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView TotalCostFormView;
+        
+        /// <summary>
+        /// PaymentDetailsFormView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView PaymentDetailsFormView;
         
         /// <summary>
         /// Label14 control.
@@ -191,15 +182,6 @@ namespace GourmetPizza.customers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator14;
-        
-        /// <summary>
-        /// PaymentDetailsFormView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView PaymentDetailsFormView;
         
         /// <summary>
         /// Label16 control.
@@ -364,94 +346,103 @@ namespace GourmetPizza.customers {
         protected global::System.Web.UI.WebControls.View SummaryOfOrder;
         
         /// <summary>
-        /// lblPizzaType control.
+        /// txtPizzaType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPizzaType;
+        protected global::System.Web.UI.WebControls.TextBox txtPizzaType;
         
         /// <summary>
-        /// lblSize control.
+        /// txtSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSize;
+        protected global::System.Web.UI.WebControls.TextBox txtSize;
         
         /// <summary>
-        /// lblQuantity control.
+        /// txtQuantitySummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantity;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantitySummary;
         
         /// <summary>
-        /// lblTotalCost control.
+        /// txtTotalCostSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalCost;
+        protected global::System.Web.UI.WebControls.TextBox txtTotalCostSummary;
         
         /// <summary>
-        /// lblCardType control.
+        /// txtCardTypeSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCardType;
+        protected global::System.Web.UI.WebControls.TextBox txtCardTypeSummary;
         
         /// <summary>
-        /// lblNameOnCard1 control.
+        /// txtNameOnCard1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNameOnCard1;
+        protected global::System.Web.UI.WebControls.TextBox txtNameOnCard1;
         
         /// <summary>
-        /// lblCardNumber control.
+        /// txtCardNumberSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCardNumber;
+        protected global::System.Web.UI.WebControls.TextBox txtCardNumberSummary;
         
         /// <summary>
-        /// lblExpiryMonth control.
+        /// txtExpiryMonthSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExpiryMonth;
+        protected global::System.Web.UI.WebControls.TextBox txtExpiryMonthSummary;
         
         /// <summary>
-        /// lblExpiryYear control.
+        /// txtExpiryYearSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExpiryYear;
+        protected global::System.Web.UI.WebControls.TextBox txtExpiryYearSummary;
         
         /// <summary>
-        /// lblSecurityCode control.
+        /// txtSecurityCodeSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSecurityCode;
+        protected global::System.Web.UI.WebControls.TextBox txtSecurityCodeSummary;
+        
+        /// <summary>
+        /// btnBack2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBack2;
         
         /// <summary>
         /// btnConfirm control.

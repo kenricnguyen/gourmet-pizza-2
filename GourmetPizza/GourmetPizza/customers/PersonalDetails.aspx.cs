@@ -21,6 +21,21 @@ namespace GourmetPizza.customers
         protected void EditButton_Click(object sender, EventArgs e)
         {
             //DropDownList ddlState = (DropDownList)(FormView1.Row.FindControl("ddlState"));
+            lblResult.Visible = false;
+
+            //FormView1.DataBind();
+            //DropDownList ddlTitle = (DropDownList)FormView1.FindControl("ddlTitle");
+            //TextBox txtTitleEdit = (TextBox)FormView1.FindControl("txtTitleEdit");
+            //ddlTitle.SelectedValue = txtTitleEdit.Text;
+        }
+
+        protected void UpdateButton_Click(object sender, EventArgs e)
+        {
+            if (IsValid)
+            {
+                lblResult.Text = "Your details have been updated successfully";
+                lblResult.Visible = true;               
+            }
         }
     }
 }

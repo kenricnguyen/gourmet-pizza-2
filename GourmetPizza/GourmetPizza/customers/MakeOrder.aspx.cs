@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -31,26 +32,26 @@ namespace GourmetPizza.customers
         {
             //string checkedSelectCommand = "";
             MultiView1.SetActiveView(PaymentDetails);
-            lblPizzaType.Text = ddlPizzaType.SelectedItem.Text;
-            lblSize.Text = ddlPizzaSize.SelectedValue;
-            lblQuantity.Text = txtQuantity.Text;
+            txtPizzaType.Text = ddlPizzaType.SelectedItem.Text;
+            txtSize.Text = ddlPizzaSize.SelectedValue;
+            txtQuantitySummary.Text = txtQuantity.Text;
         }
 
         protected void btnNextSummary_Click(object sender, EventArgs e)
         {
             MultiView1.SetActiveView(SummaryOfOrder);
-            lblTotalCost.Text = ((TextBox)TotalCostFormView.FindControl("txtTotalCost")).Text;
-            lblCardType.Text = ddlCCT.SelectedValue;
-            lblNameOnCard1.Text = ((TextBox)PaymentDetailsFormView.FindControl("txtFullName")).Text;
-            lblCardNumber.Text = txtCardNumber.Text;
-            lblExpiryMonth.Text = ddlExpiryMonth.SelectedValue;
-            lblExpiryYear.Text = txtExpiryYear.Text;
-            lblSecurityCode.Text = txtSecurityCode.Text;
+            txtTotalCostSummary.Text = ((TextBox)TotalCostFormView.FindControl("txtTotalCost")).Text;
+            txtCardTypeSummary.Text = ddlCCT.SelectedValue;
+            txtNameOnCard1.Text = ((TextBox)PaymentDetailsFormView.FindControl("txtFullName")).Text;
+            txtCardNumberSummary.Text = txtCardNumber.Text;
+            txtExpiryMonthSummary.Text = ddlExpiryMonth.SelectedValue;
+            txtExpiryYearSummary.Text = txtExpiryYear.Text;
+            txtSecurityCodeSummary.Text = txtSecurityCode.Text;
         }
 
         protected void btnBackPaymentDetails_Click(object sender, EventArgs e)
         {
-            MultiView1.SetActiveView(PaymentDetails);
+            MultiView1.SetActiveView(OrderDetails);
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
@@ -68,9 +69,9 @@ namespace GourmetPizza.customers
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@Username", Session["username"]);
                 cmd.Parameters.AddWithValue("@pizzaID", int.Parse(((Label)TotalCostFormView.FindControl("lblPizzaID")).Text));
-                cmd.Parameters.AddWithValue("@pizzaSize", lblSize.Text);
-                cmd.Parameters.AddWithValue("@quantity", int.Parse(lblQuantity.Text));
-                cmd.Parameters.AddWithValue("@totalCost",float.Parse(lblTotalCost.Text));
+                cmd.Parameters.AddWithValue("@pizzaSize", txtSize.Text);
+                cmd.Parameters.AddWithValue("@quantity", int.Parse(txtQuantitySummary.Text));
+                cmd.Parameters.AddWithValue("@totalCost",float.Parse(txtTotalCostSummary.Text));
                 cmd.Parameters.AddWithValue("@orderTime", System.DateTime.Now);
 
                 using (con)
@@ -82,17 +83,23 @@ namespace GourmetPizza.customers
                     {
                         msg = "\nOrder is submitted";
                         lblResult.Text = msg;
+                        lblResult.ForeColor = Color.Green;
                     }
                     else
                     {
                         msg = "Order has some issues. Some data cannot be sent";
                         lblResult.Text = msg;
-
+                        lblResult.ForeColor = Color.Red;
                     }
                 }
             }
 
             
+        }
+
+        protected void btnBack2_Click(object sender, EventArgs e)
+        {
+            MultiView1.SetActiveView(PaymentDetails);
         }
     }
 }

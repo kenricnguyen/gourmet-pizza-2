@@ -5,6 +5,7 @@
     <h4>My Orders</h4>
     <hr />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" CssClass="table" GridLines="Vertical" DataSourceID="SqlDataSource1" ForeColor="Black" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+        <EmptyDataTemplate>You haven't ordered yet! No worries, <a runat="server" href="MakeOrder.aspx">make an order</a> now.</EmptyDataTemplate>
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
@@ -21,6 +22,7 @@
         <SelectedRowStyle BackColor="ControlDark" Font-Bold="True" ForeColor="White" />
 
     </asp:GridView>
+
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PizzaOrdersConnection %>" SelectCommand="
         SELECT o.[orderID], p.[pizzatype], o.[ordertime], p.[pizzaID]  , o.pizzasize,
                 o.quantity, o.totalcost
@@ -39,7 +41,7 @@
     </asp:SqlDataSource>
 
     <%--detail view needs changes to connect with selected order and display all details: orderID, pizzaID, pizzatype, pizzasize, quantity, totalcost and ordertime--%>
-    <asp:DetailsView CssClass="table" ID="DetailsView1" runat="server" DataSourceID="SqlDataSource2"  DataKeyNames="orderID" AutoGenerateRows="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+    <asp:DetailsView  ID="DetailsView1" runat="server" DataSourceID="SqlDataSource2"  DataKeyNames="orderID" AutoGenerateRows="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
         <AlternatingRowStyle BackColor="White" />
         <Fields>
             <asp:BoundField DataField="orderID" HeaderText="Order ID" ReadOnly="True" SortExpression="orderID" InsertVisible="False" />

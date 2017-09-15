@@ -3,17 +3,17 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <asp:LoginView runat="server" ViewStateMode="Disabled">
-        <AnonymousTemplate>
+        <AnonymousTemplate> 
             <h2>Our Pizzas</h2>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table" GridLines="Vertical"  DataSourceID="SqlDataSource1" ForeColor="Black" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4"  >
 
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="pizzatype" HeaderText="pizzatype" SortExpression="pizzatype" />
-                    <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
-                    <asp:BoundField DataField="inch9price" HeaderText="inch9price" SortExpression="inch9price" />
-                    <asp:BoundField DataField="inch11price" HeaderText="inch11price" SortExpression="inch11price" />
-                    <asp:BoundField DataField="inch13price" HeaderText="inch13price" SortExpression="inch13price" />
+                    <asp:BoundField DataField="pizzatype" HeaderText="Pizza Type" SortExpression="pizzatype" />
+                    <asp:BoundField DataField="description" HeaderText="Description" SortExpression="description" />
+                    <asp:BoundField DataField="inch9price" HeaderText="9 inch ($)" SortExpression="inch9price" />
+                    <asp:BoundField DataField="inch11price" HeaderText="11 inch ($)" SortExpression="inch11price" />
+                    <asp:BoundField DataField="inch13price" HeaderText="13 inch ($)" SortExpression="inch13price" />
                 </Columns>
                 <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
